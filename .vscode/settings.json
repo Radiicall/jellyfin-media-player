@@ -69,5 +69,6 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "__nullptr": "cpp"
-    }
+    },
+    "rust-analyzer.linkedProjects": [ "external/jellyfin-rpc/Cargo.toml" ] 
 }

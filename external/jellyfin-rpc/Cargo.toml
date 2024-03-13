@@ -1,0 +1,13 @@
+[package]
+name = "jellyfin-rpc"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"] 
+
+[dependencies]
+jellyfin-rpc = "1.0.2"
+discord-rich-presence = "0.2.3"
+
+[build-dependencies]
+cbindgen = "0.26.0"
