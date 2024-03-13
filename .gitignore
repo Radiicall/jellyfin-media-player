@@ -29,4 +29,4 @@ dist.zip
 obj-x86_64-linux-gnu/
 deployment/dist
 external/jellyfin-rpc/target
-external/jellyfin-rpc/bindings.h
+src/discord/jellyfin-rpc.h
