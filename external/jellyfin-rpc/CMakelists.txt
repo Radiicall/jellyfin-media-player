@@ -1,1 +1,0 @@
-# add_library(jellyfin-rpc STATIC jellyfin-rpc.so jellyfin-rpc.h)    må fikses, ikke rett

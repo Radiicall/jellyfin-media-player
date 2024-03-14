@@ -30,4 +30,3 @@ dist.zip
 obj-x86_64-linux-gnu/
 deployment/dist
 external/jellyfin-rpc/target
-src/discord/jellyfin-rpc.h

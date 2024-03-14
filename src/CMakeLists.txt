@@ -187,6 +187,11 @@ target_link_libraries(${MAIN_TARGET}
   ${MINIZIP_LIBS}
 )
 
+target_link_libraries(${MAIN_TARGET}
+    debug "${CMAKE_SOURCE_DIR}/external/jellyfin-rpc/target/debug/libjellyfin_rpc.a"
+    optimized "${CMAKE_SOURCE_DIR}/external/jellyfin-rpc/target/release/libjellyfin_rpc.a"
+)
+
 install(TARGETS ${MAIN_TARGET} DESTINATION ${INSTALL_BIN_DIR})
 
 set(EXE "${MAIN_NAME}.app")
