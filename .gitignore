@@ -1,3 +1,4 @@
+.cache/*
 *.pro.user*
 dependencies/*
 CMakeLists.txt.user
