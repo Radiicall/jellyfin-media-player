@@ -7,20 +7,30 @@
 #include "utils/Utils.h"
 #include "ComponentManager.h"
 
+
+extern "C" {
+uintptr_t rpc_add(uintptr_t left, uintptr_t right);
+void print_hello();
+}
+
+
 class DiscordComponent : public ComponentBase {
     Q_OBJECT
     DEFINE_SINGLETON(DiscordComponent);
 
     public:
         bool componentInitialize() override;
+        void componentPostInitialize() override;
 
-            const char* componentName() override { return "discord"; }
-            bool componentExport() override { return true; }
-    
+        const char* componentName() override { return "discord-rpc"; }
+        bool componentExport() override { return true; }
+        explicit DiscordComponent(QObject* parent = nullptr): ComponentBase(parent) {}
+
     private:
-        void onStop();
-        void onPause();
-        void onPlaying();        
+
+    private slots:
+        void RunCallbacks();
+
 };
 
 #endif

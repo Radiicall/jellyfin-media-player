@@ -40,8 +40,13 @@ impl Discord {
 }
 
 #[no_mangle]
-pub extern "C" fn add(left: usize, right: usize) -> usize {
+pub extern "C" fn rpc_add(left: usize, right: usize) -> usize {
     left + right
+}
+
+#[no_mangle]
+pub extern "C" fn print_hello() {
+    println!("hello world!");
 }
 
 #[no_mangle]

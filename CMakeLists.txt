@@ -42,6 +42,7 @@ set_policy(CMP0020 NEW)
 set_policy(CMP0017 NEW)
 set_policy(CMP0058 NEW)
 set_policy(CMP0026 OLD)
+set_policy(CMP0079 NEW)
 
 include(utils)
 include(CompilerFlags)
@@ -52,6 +53,7 @@ include(NameConfiguration)
 include(PlayerConfiguration)
 include(InputConfiguration)
 include(ClangTidy)
+include(CMakeCargo)
 
 add_definitions(-DQS_LOG_LINE_NUMBERS -DQS_LOG_SEPARATE_THREAD)
 
@@ -73,3 +75,9 @@ add_subdirectory(src)
 include(CPackConfiguration)
 
 add_custom_target(install_app_bundle COMMAND ${CMAKE_COMMAND} -P cmake_install.cmake DEPENDS JellyfinMediaPlayer)
+
+
+target_link_libraries(${MAIN_TARGET}
+    debug "${CMAKE_SOURCE_DIR}/external/jellyfin-rpc/target/debug/libjellyfin_rpc.a"
+    optimized "${CMAKE_SOURCE_DIR}/external/jellyfin-rpc/target/release/libjellyfin_rpc.a")
+

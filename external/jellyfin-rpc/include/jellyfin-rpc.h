@@ -34,7 +34,7 @@ extern "C" {
 
 CResult<Discord, uintptr_t> new(const char *client_id);
 
-uintptr_t add(uintptr_t left, uintptr_t right);
+uintptr_t rpc_add(uintptr_t left, uintptr_t right);
 
 void print_hello();
 
